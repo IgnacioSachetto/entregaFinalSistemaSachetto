@@ -1,0 +1,156 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.divPrincipal{
+    background-color: black;
+    width: 100%;
+}
+
+.bodyLista{
+    overflow: auto;
+    height: 95vh;
+    border:1px solid black;
+}
+
+
+.btn-primary{
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    color:black;
+    border: 5px outset white;
+    margin-bottom: 10px;
+}
+
+.btn-primary:hover{
+    width: 105%;
+}   
+
+
+.btn-danger{
+    border:5px outset grey;
+    width: 100%;
+    background-color: rgb(3, 3, 3);
+    margin-bottom: 10px;
+
+}
+
+
+
+.btn-success{
+    border:5px outset rgb(26, 92, 26);
+    width: 100%;
+    height: 100px;
+    background-color: rgb(26, 92, 26);
+
+}
+
+
+#tituloSeccion{
+    background: linear-gradient(to left,rgb(240, 45, 45),white);
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+}
+
+
+
+#listaSocios{
+ 
+    height: 95%;
+    color:black;
+    font-size: 25px;
+    background-color: white;
+    text-align: center;
+}
+
+
+#nuevoSocio{
+    background-color: rgb(110, 31, 31);
+    height: auto;
+    text-align: center;
+    width:100%;
+    border-radius: 10px;
+    border:5px white solid;
+
+}
+
+#nuevoSocio input, select{
+    margin-top:10px;
+    margin-bottom:10px;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nuevoSocio select{
+    width: 50%;
+    align-items: center;
+}
+
+#listaDeportes {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color:white;
+    font-weight:bold;
+    font-style: italic;
+    width:100%;
+    list-style-type: none;
+    
+}
+
+#listadoDeportesDiv{
+    background-color: rgba(221, 92, 92, 0.438);
+    border:2px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    margin-left: -10px;
+}
+
+#mostrarResumen{
+    width:100%;
+    color:white;
+    font-size: 30px;
+    text-align: center;
+    border:3px solid white;
+}
+
+#btn-secundario{
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    color:white;
+    background-color: rgb(0, 0, 0);
+    border:5px outset rgb(67, 80, 67);
+}
+
+#btn-secundario:hover{
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    color:white;
+    background-color: rgb(12, 75, 12);
+    border:5px outset rgb(26, 92, 26);
+
+}
+
+#mostrarBusqueda{
+    height: 50px;
+    width: 100%;
+    color:white;
+    background-color: rgb(12, 75, 12);
+    border:5px outset rgb(26, 92, 26);
+}
+#mostrarBusqueda:hover{
+    background-color: blue;
+    border:5px outset blue;
+
+}

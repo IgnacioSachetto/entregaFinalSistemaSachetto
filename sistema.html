@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>Sistema Club</title>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel='stylesheet' type='text/css' media='screen' href='./css/estilos.css'>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        
+    </head>
+
+    <main class="d-flex flex-nowrap vh-100">
+        <!--SIDEBAR-->
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-danger" id="sidebar" style="width: 280px;">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <img src="img/logoCoder.png" class="bi pe-none me-2" width="40" height="32"></img>
+                <img src="" alt="">
+                <h5>Bienvenido </h5>
+            </a>
+            <hr>
+
+
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <button class="btn btn-primary" id="mostrarSocios">Mostrar Socios</button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="btn btn-primary" id="agregarSocios">Agregar Socios</button>
+                </li>
+
+	            <li class="nav-item">
+		            <button class="btn btn-primary" id="mostrarCategorias" onclick="mostrarPorDeporte()">Buscar por Deporte</button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="btn btn-primary" id="mostrarDatosDeporte" onclick="mostrarDatosDeporte()">Mostrar Datos Deporte</button>
+                </li>
+            
+                <li class="nav-item">
+                    <button type="button" class="btn btn-danger" id="actualizarLista" onclick="otraBusqueda()" >Actualizar Lista</button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="btn btn-success" id="mostrarInforme" onclick="mostrarInforme()">Generar Informe</button>
+                </li>
+                
+            </ul>
+
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="./img/userIcon.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                  <strong id="nombreUser"></strong>
+                </a>
+              </div>
+        </div>
+
+        <div class="divPrincipal">
+            <div id="tituloSeccion"></div>
+
+            <div class="bodyLista">
+                <div>
+
+                    <table  class="table table-hover table-dark" id="tablaSocios">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Deporte</th>
+                          </tr>
+                        </thead>   
+                      </table>
+
+                </div>
+
+           
+                <form id="nuevoSocio">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="socioIngresadoNombre" aria-describedby="emailHelp" placeholder="Ingrese Nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="socioIngresadoApellido" aria-describedby="emailHelp" placeholder="Ingrese Apellido">
+                      </div>
+
+                    <select class="form-control" id="socioIngresadoDeporte">
+                        <option selected hidden>Seleccione un deporte</option>
+                        <option>Futbol</option>
+                        <option>Basquet</option>
+                        <option>Tenis</option>
+                    </select>
+                    
+                    <button type="button" class="btn btn-primary" id="btn-secundario" onclick="agregarSocio()" >Agregar Socio</button>
+                </form>
+
+          
+                <select class="form-control" id="productoIngresadoDeporte">
+                    <option selected hidden>Seleccione un deporte</option>
+                    <option>Futbol</option>
+                    <option>Basquet</option>
+                    <option>Tenis</option>
+                    <option>Todos</option>
+                </select>
+                <button class="btn btn-primary" id="mostrarBusqueda" onclick="busquedaPorDeporte()">Buscar</button>
+
+
+
+                <div>
+                    <table  class="table table-hover table-dark" id="listaPorDeporte">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Deporte</th>
+                          </tr>
+                        </thead>
+            
+                    </table>
+                      
+                </div>
+
+                <ul id="listaDeportes"></ul>
+        
+                <div id="mostrarResumen">
+                    <h2><i>Informe General</i></h2>
+                    <hr>
+                    <p>La cantidad de socios BASQUET es</strong><strong id="totalBasquet"></strong></p>
+                    <p>La cantidad de socios FUTBOL es</strong><strong id="totalFutbol"></strong></p>
+                    <p>La cantidad de socios TENIS es</strong><strong id="totalTenis"></strong></p>
+                    <p>La cantidad de socios TODOS es</strong><strong id="totalTodos"></strong></p>
+                    <hr>
+                    <p>Total a facturar BASQUET $</strong><strong id="totalFacturarBasquet"></strong>(Valor Cuota: $1500)</p>
+                    <p>Total a facturar FUTBOL $</strong><strong id="totalFacturarFutbol"></strong>(Valor Cuota: $500)</p>
+                    <p>Total a facturar TENIS $</strong><strong id="totalFacturarTenis"></strong>(Valor Cuota: $2500)</p>
+                    <p>Total a facturar TODOS $</strong><strong id="totalFacturarTodos"></strong></p>
+                    <hr>
+                </div>
+
+        </div>
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+    <!-- Scripts -->
+    <script src="./js/scriptPrincipal.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</html>

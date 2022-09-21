@@ -1,0 +1,7 @@
+[
+    {"id":1, "nombre":"Basquet", "profesor": "Ariel Montes", "correo": "arielmontes@hotmail.com", "numero": "344056066"},
+    {"id":2, "nombre":"Tenis", "profesor": "Natalia Sal", "correo": "nataliasal@gmail.com", "numero":"354043565"},
+    {"id":3, "nombre":"Futbol", "precio": "Ignacio Sachetto", "correo": "nachosachetto1998@hotmail.com", "numero": "3472430503"}
+
+]
+
